@@ -1,8 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
-
-version = VERSION_NAME
+apply plugin: 'com.novoda.bintray-release'
 
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
@@ -14,55 +11,14 @@ dependencies {
     testCompile "org.assertj:assertj-core:$ASSERTJ_VERSION"
 }
 
-bintray {
-    user = project.ext.bintrayUser
-    key = project.ext.bintrayApiKey
-    configurations = ['archives']
-    pkg {
-        repo = 'maven'
-        name = 'lintobox'
-        userOrg = properties.get("BINTRAY_USER")
-        licenses = ['Apache-2.0']
-        publish = true
-        publicDownloadNumbers = true
-        vcsUrl = 'https://github.com/aurae/lintobox'
-        version {
-            name = VERSION_NAME
-            desc = DESCRIPTION
-        }
-    }
-}
+publish {
+    userOrg = ORG_NAME
+    groupId = GROUP_ID
+    artifactId = ARTIFACT_ID
+    publishVersion = VERSION_NAME
+    desc = DESCRIPTION
+    website = WEBSITE
 
-publishing {
-    publications {
-        MyPublication(MavenPublication) {
-            from components.java
-            groupId GROUP_ID
-            artifactId ARTIFACT_ID
-            version VERSION_NAME
-        }
-    }
-}
-
-task copyPom(type: Copy) {
-    from 'build/publications/MyPublication'
-    into 'build/poms'
-    include 'pom-default.xml'
-}
-
-publish.dependsOn copyPom
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
+    bintrayUser = project.ext.bintrayUser
+    bintrayKey = project.ext.bintrayApiKey
 }

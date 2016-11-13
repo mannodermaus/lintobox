@@ -7,13 +7,13 @@ A delicious and lightweight toolkit for Lint Detector assertions.
 No `jcenter()` yet; sorry!
 
 ```gradle
-buildscript {
-    repositories {
-        maven { url "https://dl.bintray.com/aurae/maven" }
-    }
+repositories {
+    maven { url "https://dl.bintray.com/aurae/maven" }
 }
 
-testCompile "de.mannodermaus.lint:lintobox:0.1.0"
+dependencies {
+    testCompile "de.mannodermaus.lint:lintobox:0.1.0"
+}
 ```
 
 ## Usage
@@ -47,9 +47,9 @@ In the above example, `LintSpec#toString()` yields the following string:
 
 ```
 MyLintTestCase.java:10: Error: Lint is great, don't you dare say otherwise [WithdrawnAppraisal]\n" +
-                        "  boolean lintIsGreat = false;\n" +
-                        "                        ~~~~~\n" +
-                        "1 errors, 0 warnings
+"  boolean lintIsGreat = false;\n" +
+"                        ~~~~~\n" +
+"1 errors, 0 warnings
 ```
 
 ## API

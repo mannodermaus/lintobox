@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$BINTRAY_PLUGIN_VERSION"
+    }
+}
+
+Properties properties = new Properties()
+properties.load(new FileInputStream(new File(rootProject.projectDir, "local.properties")))
+allprojects {
+    repositories {
+        jcenter()
+    }
+    ext {
+        bintrayUser = properties.get('BINTRAY_USER')
+        bintrayApiKey = properties.get('BINTRAY_API_KEY')
+    }
+}

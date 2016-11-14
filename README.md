@@ -4,16 +4,10 @@ A delicious and lightweight toolkit for Lint Detector assertions.
 
 ## Download
 
-No `jcenter()` yet; sorry!
+Get it from `jcenter()`:
 
-```gradle
-repositories {
-    maven { url "https://dl.bintray.com/aurae/maven" }
-}
-
-dependencies {
-    testCompile "de.mannodermaus.lint:lintobox:0.1.0"
-}
+```groovy
+testCompile "de.mannodermaus.lint:lintobox:0.1.0"
 ```
 
 ## Usage

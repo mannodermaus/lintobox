@@ -22,3 +22,6 @@ publish {
     bintrayUser = project.ext.bintrayUser
     bintrayKey = project.ext.bintrayApiKey
 }
+
+// Upload Task chain:
+// > ./gradlew clean build mavenJavadocJar mavenSourcesJar generatePomFileForMavenPublication publish bintrayUpload -PdryRun=false

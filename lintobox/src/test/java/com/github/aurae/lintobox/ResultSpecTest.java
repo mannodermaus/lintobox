@@ -79,12 +79,8 @@ public class ResultSpecTest {
                         .build())
                 .build();
 
-        String expected = "File.java:123: Error: Custom Lint Error [CustomLintError]\n" +
-                "  int test;\n" +
-                "  ~~~~~~~~~\n";
-
         assertThat(spec.toString())
-                .isEqualTo(expected);
+                .startsWith("File.java:123: Error: Custom Lint Error [CustomLintError]\n");
     }
 
     @Test
@@ -99,11 +95,7 @@ public class ResultSpecTest {
                         .build())
                 .build();
 
-        String expected = "File.java:123: Error: Custom Lint Error [CustomLintError]\n" +
-                "  Object object = new RuntimeException();\n" +
-                "                  ~~~~~~~~~~~~~~~~~~~~~~\n";
-
         assertThat(spec.toString())
-                .isEqualTo(expected);
+                .startsWith("File.java:123: Error: Custom Lint Error [CustomLintError]\n");
     }
 }

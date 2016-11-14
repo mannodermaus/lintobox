@@ -26,7 +26,7 @@ public class LintSpecTest {
                 .build();
 
         assertThat(lint.toString())
-                .endsWith("0 errors, 1 warnings");
+                .endsWith("0 errors, 1 warnings\n");
     }
 
     @Test
@@ -43,6 +43,6 @@ public class LintSpecTest {
                 .build();
 
         assertThat(lint.toString())
-                .endsWith("1 errors, 0 warnings");
+                .endsWith("1 errors, 0 warnings\n");
     }
 }

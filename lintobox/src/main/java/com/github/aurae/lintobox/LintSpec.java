@@ -46,7 +46,7 @@ public final class LintSpec {
                     break;
             }
         }
-        sb.append(errorCount).append(" errors, ").append(warningCount).append(" warnings");
+        sb.append(errorCount).append(" errors, ").append(warningCount).append(" warnings\n");
 
         return sb.toString();
     }

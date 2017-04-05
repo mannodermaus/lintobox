@@ -24,8 +24,8 @@ public class LocationSpec {
 
     @Override
     public String toString() {
-        return "  " + text + "\n" +
-                "  " + underline + "\n";
+        return text + "\n" +
+               underline + "\n";
     }
 
     /* Begin private */

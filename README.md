@@ -7,7 +7,7 @@ A delicious and lightweight toolkit for Lint Detector assertions.
 Get it from `jcenter()`:
 
 ```groovy
-testCompile "de.mannodermaus.lint:lintobox:0.1.1"
+testCompile "de.mannodermaus.lint:lintobox:0.1.2"
 ```
 
 ## Usage

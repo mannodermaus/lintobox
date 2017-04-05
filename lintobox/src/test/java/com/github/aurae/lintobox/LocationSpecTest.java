@@ -16,8 +16,8 @@ public class LocationSpecTest {
         assertThat(location.toString())
                 .isEqualTo(
                         // @formatter:off
-                        "  Object object = String.valueOf(123);\n" +
-                        "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+                        "Object object = String.valueOf(123);\n" +
+                        "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                         // @formatter:on
                 );
     }
@@ -32,8 +32,8 @@ public class LocationSpecTest {
         assertThat(location.toString())
                 .isEqualTo(
                         // @formatter:off
-                        "  Object object = String.valueOf(123);\n" +
-                        "                  ~~~~~~~~~~~~~~~~~~~\n"
+                        "Object object = String.valueOf(123);\n" +
+                        "                ~~~~~~~~~~~~~~~~~~~\n"
                         // @formatter:on
                 );
     }
@@ -48,8 +48,8 @@ public class LocationSpecTest {
         assertThat(location.toString())
                 .isEqualTo(
                         // @formatter:off
-                        "  InternalClass object = new InternalClass();\n" +
-                        "  ~~~~~~~~~~~~~\n"
+                        "InternalClass object = new InternalClass();\n" +
+                        "~~~~~~~~~~~~~\n"
                         // @formatter:on
                 );
     }
@@ -64,8 +64,8 @@ public class LocationSpecTest {
         assertThat(location.toString())
                 .isEqualTo(
                         // @formatter:off
-                        "  InternalClass object = new InternalClass();\n" +
-                        "                             ~~~~~~~~~~~~~\n"
+                        "InternalClass object = new InternalClass();\n" +
+                        "                           ~~~~~~~~~~~~~\n"
                         // @formatter:on
                 );
     }

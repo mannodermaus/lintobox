@@ -61,8 +61,8 @@ public class ResultSpecTest {
                 .build();
 
         String expected = "File.java:123: Warning: Custom Lint Warning [CustomLintWarning]\n" +
-                "  int test;\n" +
-                "  ~~~~~~~~~\n";
+                "int test;\n" +
+                "~~~~~~~~~\n";
 
         assertThat(spec.toString())
                 .isEqualTo(expected);
